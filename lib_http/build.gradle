@@ -1,0 +1,19 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
+apply from:"../module.gradle"
+
+
+android {
+    namespace 'com.example.lib_http'
+}
+
+dependencies {
+
+    api project(":lib_base")
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}

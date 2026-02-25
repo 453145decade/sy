@@ -1,0 +1,29 @@
+ext{
+    isDeubg=false //模块是否可以单独测试，true可以单独测试
+    android=[
+            compileSdk:34,
+            minSdk:26,
+            targetSdk:34,
+            versionCode:1,
+            versionName:"1.0"
+    ]
+
+    liblivedata= 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    libviewmodel= 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    libruntime='androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    //Retrofit依赖
+    libretrofit= 'com.squareup.retrofit2:retrofit:2.11.0'
+    //Gson converter gson解析
+    libgson= 'com.squareup.retrofit2:converter-gson:2.11.0'
+    libinterceptor= 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    libcoroutines= 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+    libmmkv='com.tencent:mmkv:1.3.3'
+
+    libRetrofitFlowCallAdapter ='com.github.zyj1609wz:RetrofitFlowCallAdapter:1.1.0'
+
+    libutilcodex= 'com.blankj:utilcodex:1.31.1'
+
+    libroom='androidx.room:room-runtime:2.4.2'
+    libroomcompiler='androidx.room:room-compiler:2.4.2'
+}

@@ -1,0 +1,48 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
+}
+apply plugin: 'com.tencent.vasdolly'
+apply from:"../module.gradle"
+
+android {
+    namespace 'com.example.sy'
+
+    defaultConfig {
+        applicationId "com.example.sy"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters  "armeabi-v7a", "arm64-v8a"
+        }
+    }
+}
+
+dependencies {
+
+    api project(":user")
+    api project(":document")
+
+
+
+
+    api "com.google.dagger:hilt-android:2.48"
+    implementation files('libs\\umeng-common-2.1.0.jar')
+    implementation files('libs\\umeng-share-core-6.9.6.jar')
+    implementation files('libs\\umeng-share-QQ-simplify-6.9.6.jar')
+    implementation files('libs\\umeng-share-sina-simplify-6.9.6.jar')
+    implementation files('libs\\umeng-share-wechat-simplify-6.9.6.jar')
+    implementation files('libs\\umeng-shareboard-widget-6.9.6.jar')
+    implementation files('libs\\umeng-sharetool-6.9.6.jar')
+    kapt "com.google.dagger:hilt-android-compiler:2.48"
+    implementation(files("./libs/alipaysdk-15.8.05.211018174351.aar"))
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation platform(libs.androidx.compose.bom)
+    androidTestImplementation libs.androidx.ui.test.junit4
+    debugImplementation libs.androidx.ui.tooling
+    debugImplementation libs.androidx.ui.test.manifest
+}
