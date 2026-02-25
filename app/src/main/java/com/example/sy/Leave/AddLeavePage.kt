@@ -165,6 +165,7 @@ fun AddLeavePage(navHostController: NavHostController,vm:LeaveViewModel = hiltVi
             },modifier = Modifier.fillMaxWidth(),isError = isError,
                 trailingIcon = { Text(text = "${reason.length}/20")})
         }
+//        按钮
         Button(onClick = {
             var map = mapOf(
                 "type" to type,
